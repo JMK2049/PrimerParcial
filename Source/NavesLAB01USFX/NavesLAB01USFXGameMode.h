@@ -7,7 +7,6 @@
 #include "NavesLAB01USFXGameMode.generated.h"
 
 class AEnemigo;
-class APawn;
 
 UCLASS(MinimalAPI)
 class ANavesLAB01USFXGameMode : public AGameModeBase
@@ -16,24 +15,30 @@ class ANavesLAB01USFXGameMode : public AGameModeBase
 
 public:
 	ANavesLAB01USFXGameMode();
-
-public:
-	virtual void BeginPlay() override;
-	virtual void Tick(float DeltaTime) override;
-
-public:
 	
+protected:
+	virtual void BeginPlay() override;
+
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Tabla Objetos")
 	TArray<AEnemigo*> AEnemigos;
 
 	FTimerHandle TimerFormacion;
+	FTimerHandle TimerLiberacion;
 
 	void FormarNavesFrentePawn();
+	void LiberarNaves();
+
+	UPROPERTY(EditAnywhere, Category = "Configuracion Formacion")
+	float TiempoEnFormacion = 10.0f;// Tiempo que se quedan quietas
+
+	UPROPERTY(EditAnywhere, Category = "Configuracion Formacion")
+	float IntervaloFormacion = 10.0f;// Tiempo total entre formaciones
+
+	UPROPERTY(EditAnyWhere, Category = "Configuracion Formacion")
+	float EspaciadoVertical = 100.0f;
 
 	APawn* PlayerPawn;  // Referencia al Pawn
-
-	float IntervaloFormacion = 5.0f;
-
-	float EspaciadoVertical = 100.0f;
 };
 
 

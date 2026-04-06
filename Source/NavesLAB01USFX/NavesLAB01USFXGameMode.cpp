@@ -3,6 +3,8 @@
 #include "NavesLAB01USFXGameMode.h"
 #include "NavesLAB01USFXPawn.h"
 #include "Enemigo.h"
+#include "EnemigoAereo.h"
+#include "EnemigoTerrestre.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Kismet/GameplayStatics.h"
 
@@ -19,30 +21,54 @@ void ANavesLAB01USFXGameMode::BeginPlay()
     UWorld* World = GetWorld();
     if (!World) return;
 
+    int32 CantidadEnemigos = FMath::RandRange(8, 15);
+
     // Spawn 10 naves y agregar a array
-    for (int32 i = 0; i < 10; i++)
+    for (int32 i = 0; i < CantidadEnemigos; i++)
     {
-        FVector UbicacionSpawn(-600 + (i * 50), 150 + FMath::Sin(i) * 50, 150);  // Spread inicial
-        AEnemigo* NuevaNave = World->SpawnActor<AEnemigo>(AEnemigo::StaticClass(), UbicacionSpawn, FRotator::ZeroRotator);
+        float RandX = FMath::RandRange(-800.0f, 800.0f);
+        float RandY = FMath::RandRange(100.0f, 600.0f);
+        float RandZ = 200.0f;
+
+        FVector UbicacionSpawn(RandX, RandY, RandZ);  // Spread inicial
+        AEnemigo* NuevaNave = nullptr;
+
+        int32 EnemigoAleatorio = FMath::RandRange(0, 2);
+
+        switch (EnemigoAleatorio)
+        {
+        case 0:
+            NuevaNave = World->SpawnActor<AEnemigo>(AEnemigo::StaticClass(), UbicacionSpawn, FRotator::ZeroRotator);
+            break;
+        case 1:
+            NuevaNave = World->SpawnActor<AEnemigoAereo>(AEnemigoAereo::StaticClass(), UbicacionSpawn, FRotator::ZeroRotator);
+            break;
+        case 2:
+            NuevaNave = World->SpawnActor<AEnemigoTerrestre>(AEnemigoTerrestre::StaticClass(), UbicacionSpawn, FRotator::ZeroRotator);
+            break;
+        }
 
         if (NuevaNave)
         {
-			NuevaNave->bMovimientoAutonomo = true;  // Iniciar movimiento autónomo
-            AEnemigos.Add(NuevaNave);
-            UE_LOG(LogTemp, Warning, TEXT("Nave %d spawnada"), i);
+            NuevaNave->bMovimientoAutonomo = true;
+            AEnemigos.Add(NuevaNave); //Almacenar en el contenedor
         }
     }
     
-    // Obtener Pawn jugador
-    PlayerPawn = UGameplayStatics::GetPlayerPawn(this, 0);
-    
-    // Iniciar timer cada 5 seg
-    GetWorldTimerManager().SetTimer(TimerFormacion, this, &ANavesLAB01USFXGameMode::FormarNavesFrentePawn, IntervaloFormacion, true);
-    
+    PlayerPawn = UGameplayStatics::GetPlayerPawn(this, 0);// Obtener Pawn jugador
+    GetWorldTimerManager().SetTimer(TimerFormacion, this, &ANavesLAB01USFXGameMode::FormarNavesFrentePawn, IntervaloFormacion, true);// Iniciar timer cada 5 seg 
 }
 
-void ANavesLAB01USFXGameMode::Tick(float DeltaTime)
+void ANavesLAB01USFXGameMode::LiberarNaves()
 {
+    for (AEnemigo* Nave : AEnemigos)
+    {
+        if (Nave)
+        {
+			Nave->bMovimientoAutonomo = true;// Reanudar movimiento autónomo
+            Nave->CargarRuta();//Cargar ruta aleatoria
+        }
+    }
 }
 
 void ANavesLAB01USFXGameMode::FormarNavesFrentePawn()
@@ -70,21 +96,10 @@ void ANavesLAB01USFXGameMode::FormarNavesFrentePawn()
 			Nave->bMovimientoAutonomo = false;  // Pausar movimiento autónomo
         }
     }
+    UE_LOG(LogTemp, Warning, TEXT("¡Naves formadas frente al jugador!"));
 
-        UE_LOG(LogTemp, Warning, TEXT("¡Naves formadas frente al jugador!"));
-
-    /*if (!PlayerPawn) return;
-    FVector UbicacionJugador = PlayerPawn->GetActorLocation();
-    FRotator RotacionJugador = PlayerPawn->GetActorRotation();
-    for (int32 i = 0; i < AEnemigos.Num(); i++)
-    {
-        if (AEnemigos[i])
-        {
-            float DesplazamientoY = (i - AEnemigos.Num() / 2) * EspaciadoVertical;
-            FVector NuevaUbicacion = UbicacionJugador + RotacionJugador.RotateVector(FVector(200, DesplazamientoY, 0));
-            AEnemigos[i]->SetActorLocation(NuevaUbicacion);
-        }
-	}*/
+    float TiempoEspera = 3.0f;
+    GetWorldTimerManager().SetTimer(TimerLiberacion, this, &ANavesLAB01USFXGameMode::LiberarNaves, TiempoEspera, false);
 }
 
 

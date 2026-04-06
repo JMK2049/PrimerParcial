@@ -13,13 +13,15 @@ UCLASS()
 class NAVESLAB01USFX_API AEnemigoAereo : public AEnemigo
 {
 	GENERATED_BODY()
+
+public:
+	AEnemigoAereo();
+
 protected:
 	virtual void BeginPlay() override;
 
 public:
 	virtual void Tick(float DeltaTime) override;
-
-	//void Mover(float DeltaTime);
-
-	void CargarRuta() override;
+	virtual void CargarRuta() override;
+	void ActivarMovimiento();
 };

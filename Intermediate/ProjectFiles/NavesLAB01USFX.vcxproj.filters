@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\NavesLAB01USFX.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{F5D3B015-0BCC-44DE-98C5-F9DB8282C322}</UniqueIdentifier>
+      <UniqueIdentifier>{12A4BC01-A10C-485B-A53B-D1AD6AB22DED}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\NavesLAB01USFX.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{ABDB8078-3CA9-402D-B68E-062C69F017AE}</UniqueIdentifier>
+      <UniqueIdentifier>{22EAAB07-CDCA-4FAC-ABFB-8A3E9910DC85}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\NavesLAB01USFX">
-      <UniqueIdentifier>{A747E0BA-4786-48C9-BD16-04E9DDFDF721}</UniqueIdentifier>
+      <UniqueIdentifier>{705E06C8-777B-4419-A449-A258A396A14C}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\NavesLAB01USFX\Enemigo.cpp">
       <Filter>Source\NavesLAB01USFX</Filter>
@@ -56,6 +56,36 @@
       <Filter>Source\NavesLAB01USFX</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\NavesLAB01USFX\EnemigoTerrestre.h">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\NavesLAB01USFX\MuroBase.cpp">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\NavesLAB01USFX\MuroBase.h">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\NavesLAB01USFX\MuroFantasma.cpp">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\NavesLAB01USFX\MuroFantasma.h">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\NavesLAB01USFX\MuroGenerador.cpp">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\NavesLAB01USFX\MuroGenerador.h">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\NavesLAB01USFX\MuroMovil.cpp">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\NavesLAB01USFX\MuroMovil.h">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\NavesLAB01USFX\MuroTrampa.cpp">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\NavesLAB01USFX\MuroTrampa.h">
       <Filter>Source\NavesLAB01USFX</Filter>
     </ClInclude>
     <None Include="..\..\Source\NavesLAB01USFX\NavesLAB01USFX.Build.cs">

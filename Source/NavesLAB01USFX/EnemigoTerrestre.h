@@ -14,4 +14,14 @@ class NAVESLAB01USFX_API AEnemigoTerrestre : public AEnemigo
 {
 	GENERATED_BODY()
 	
+public:
+	AEnemigoTerrestre();
+
+protected:
+	virtual void BeginPlay() override;
+
+public:
+	virtual void CargarRuta() override;
+	void ActivarMovimiento();
+
 };

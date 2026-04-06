@@ -36,7 +36,7 @@ public: \
 
 #define NavesLAB01USFX_Source_NavesLAB01USFX_EnemigoTerrestre_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AEnemigoTerrestre(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	NO_API AEnemigoTerrestre(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AEnemigoTerrestre) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AEnemigoTerrestre); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AEnemigoTerrestre); \
@@ -48,8 +48,6 @@ public:
 
 
 #define NavesLAB01USFX_Source_NavesLAB01USFX_EnemigoTerrestre_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AEnemigoTerrestre() { }; \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AEnemigoTerrestre(AEnemigoTerrestre&&); \

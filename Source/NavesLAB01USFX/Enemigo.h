@@ -19,7 +19,7 @@ public:
 
 	UStaticMeshComponent* MallaEnemigo;
 
-	float VelocidadMovimiento = 100.0f;
+	float VelocidadMovimiento;
 
 	FVector WorldLimitesMin = FVector(-1000, -1000, 0);
 	FVector WorldLimitesMax = FVector(1000, 1000, 0);
@@ -28,13 +28,10 @@ public:
 	TArray<FVector> PuntosRuta;
 	
 	int32 IndicePuntoRutaActual = 0;
-
 	FVector PosicionInicial;
+
 	float Tolerancia = 50.0f;
-
 	float TiempoAcumulado = 0.0f;
-
-public:
 	bool bMovimientoAutonomo = false;
 
 	FVector PosicionDestinoGameMode;
@@ -48,7 +45,6 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	
 	void Mover(float DeltaTime);
-
 	virtual void CargarRuta();
 
 };

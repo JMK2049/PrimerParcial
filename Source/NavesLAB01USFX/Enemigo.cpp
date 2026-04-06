@@ -20,7 +20,7 @@ AEnemigo::AEnemigo()
 		MallaEnemigo->SetStaticMesh(MallaAsset.Object);
 	}
 
-
+    VelocidadMovimiento = 600.0f;
 
 }
 
@@ -30,6 +30,7 @@ void AEnemigo::BeginPlay()
 	Super::BeginPlay();
 
 	CargarRuta();
+    bMovimientoAutonomo = true;
 }
 
 // Called every frame

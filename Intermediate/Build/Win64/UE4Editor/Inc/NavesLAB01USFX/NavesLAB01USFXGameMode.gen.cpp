@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeNavesLAB01USFXGameMode() {}
 	NAVESLAB01USFX_API UClass* Z_Construct_UClass_ANavesLAB01USFXGameMode();
 	ENGINE_API UClass* Z_Construct_UClass_AGameModeBase();
 	UPackage* Z_Construct_UPackage__Script_NavesLAB01USFX();
+	NAVESLAB01USFX_API UClass* Z_Construct_UClass_AEnemigo_NoRegister();
 // End Cross Module References
 	void ANavesLAB01USFXGameMode::StaticRegisterNativesANavesLAB01USFXGameMode()
 	{
@@ -31,6 +32,24 @@ void EmptyLinkFunctionForGeneratedCodeNavesLAB01USFXGameMode() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_AEnemigos_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AEnemigos_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_AEnemigos;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TiempoEnFormacion_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_TiempoEnFormacion;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_IntervaloFormacion_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_IntervaloFormacion;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EspaciadoVertical_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_EspaciadoVertical;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -46,6 +65,46 @@ void EmptyLinkFunctionForGeneratedCodeNavesLAB01USFXGameMode() {}
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 	};
 #endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_AEnemigos_Inner = { "AEnemigos", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_AEnemigo_NoRegister, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_AEnemigos_MetaData[] = {
+		{ "Category", "Tabla Objetos" },
+		{ "ModuleRelativePath", "NavesLAB01USFXGameMode.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_AEnemigos = { "AEnemigos", nullptr, (EPropertyFlags)0x0010000000000015, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANavesLAB01USFXGameMode, AEnemigos), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_AEnemigos_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_AEnemigos_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_TiempoEnFormacion_MetaData[] = {
+		{ "Category", "Configuracion Formacion" },
+		{ "ModuleRelativePath", "NavesLAB01USFXGameMode.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_TiempoEnFormacion = { "TiempoEnFormacion", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANavesLAB01USFXGameMode, TiempoEnFormacion), METADATA_PARAMS(Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_TiempoEnFormacion_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_TiempoEnFormacion_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_IntervaloFormacion_MetaData[] = {
+		{ "Category", "Configuracion Formacion" },
+		{ "Comment", "// Tiempo que se quedan quietas\n" },
+		{ "ModuleRelativePath", "NavesLAB01USFXGameMode.h" },
+		{ "ToolTip", "Tiempo que se quedan quietas" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_IntervaloFormacion = { "IntervaloFormacion", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANavesLAB01USFXGameMode, IntervaloFormacion), METADATA_PARAMS(Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_IntervaloFormacion_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_IntervaloFormacion_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_EspaciadoVertical_MetaData[] = {
+		{ "Category", "Configuracion Formacion" },
+		{ "Comment", "// Tiempo total entre formaciones\n" },
+		{ "ModuleRelativePath", "NavesLAB01USFXGameMode.h" },
+		{ "ToolTip", "Tiempo total entre formaciones" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_EspaciadoVertical = { "EspaciadoVertical", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANavesLAB01USFXGameMode, EspaciadoVertical), METADATA_PARAMS(Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_EspaciadoVertical_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_EspaciadoVertical_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_AEnemigos_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_AEnemigos,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_TiempoEnFormacion,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_IntervaloFormacion,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_EspaciadoVertical,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ANavesLAB01USFXGameMode>::IsAbstract,
 	};
@@ -55,11 +114,11 @@ void EmptyLinkFunctionForGeneratedCodeNavesLAB01USFXGameMode() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::PropPointers),
 		0,
 		0x008802ACu,
 		METADATA_PARAMS(Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::Class_MetaDataParams))
@@ -73,7 +132,7 @@ void EmptyLinkFunctionForGeneratedCodeNavesLAB01USFXGameMode() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANavesLAB01USFXGameMode, 521425704);
+	IMPLEMENT_CLASS(ANavesLAB01USFXGameMode, 1638467688);
 	template<> NAVESLAB01USFX_API UClass* StaticClass<ANavesLAB01USFXGameMode>()
 	{
 		return ANavesLAB01USFXGameMode::StaticClass();
