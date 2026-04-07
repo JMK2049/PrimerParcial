@@ -30,4 +30,9 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+public:
+	bool bHacerOla = true;
+
+	float TiempoAcumulado = 0.0f;
+	FVector PosicionInicial;
 };

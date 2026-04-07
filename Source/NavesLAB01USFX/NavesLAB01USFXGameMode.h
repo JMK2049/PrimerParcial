@@ -23,6 +23,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Tabla Objetos")
 	TArray<AEnemigo*> AEnemigos;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Muros")
+	TArray<class AMuroBase*> ArrayMuros;
+
 	FTimerHandle TimerFormacion;
 	FTimerHandle TimerLiberacion;
 
@@ -39,6 +42,8 @@ public:
 	float EspaciadoVertical = 100.0f;
 
 	APawn* PlayerPawn;  // Referencia al Pawn
+
+	void ActivarEfectoOla();
 };
 
 

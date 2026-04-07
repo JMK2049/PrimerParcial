@@ -5,6 +5,7 @@
 #include "Enemigo.h"
 #include "EnemigoAereo.h"
 #include "EnemigoTerrestre.h"
+#include "MuroBase.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Kismet/GameplayStatics.h"
 
@@ -102,4 +103,13 @@ void ANavesLAB01USFXGameMode::FormarNavesFrentePawn()
     GetWorldTimerManager().SetTimer(TimerLiberacion, this, &ANavesLAB01USFXGameMode::LiberarNaves, TiempoEspera, false);
 }
 
+
+void ANavesLAB01USFXGameMode::ActivarEfectoOla()
+{
+    for (AMuroBase* Muro : ArrayMuros) {
+        if (Muro) {
+            Muro->bHacerOla = true;
+        }
+    }
+}
 

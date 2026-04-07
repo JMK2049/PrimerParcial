@@ -51,7 +51,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{7072FBC2-F7BC-481A-BC03-2059C61C08DB}</ProjectGuid>
+    <ProjectGuid>{386E285A-6C6F-4669-8F55-21A472E23A85}</ProjectGuid>
     <Keyword>MakeFileProj</Keyword>
     <RootNamespace>NavesLAB01USFX</RootNamespace>
     <PlatformToolset>v143</PlatformToolset>

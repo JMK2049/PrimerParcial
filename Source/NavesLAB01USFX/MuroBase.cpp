@@ -36,7 +36,7 @@ void AMuroBase::AplicarEfecto()
 void AMuroBase::BeginPlay()
 {
 	Super::BeginPlay();
-
+	PosicionInicial = GetActorLocation();
 }
 
 // Called every frame
@@ -44,5 +44,18 @@ void AMuroBase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if (bHacerOla) {
+		TiempoAcumulado += DeltaTime;
+
+		float Amplitud = 50.0f;
+		float Frecuencia = 2.0f;
+		float Offset = GetActorLocation().X * 0.01f;
+
+		float NuevoZ = PosicionInicial.Z + (Amplitud * FMath::Sin(TiempoAcumulado * Frecuencia + Offset));
+
+		FVector NuevaPosicion = GetActorLocation();
+		NuevaPosicion.Z = NuevoZ;
+		SetActorLocation(NuevaPosicion);
+	}
 }
 

@@ -18,6 +18,7 @@ void EmptyLinkFunctionForGeneratedCodeNavesLAB01USFXGameMode() {}
 	ENGINE_API UClass* Z_Construct_UClass_AGameModeBase();
 	UPackage* Z_Construct_UPackage__Script_NavesLAB01USFX();
 	NAVESLAB01USFX_API UClass* Z_Construct_UClass_AEnemigo_NoRegister();
+	NAVESLAB01USFX_API UClass* Z_Construct_UClass_AMuroBase_NoRegister();
 // End Cross Module References
 	void ANavesLAB01USFXGameMode::StaticRegisterNativesANavesLAB01USFXGameMode()
 	{
@@ -37,6 +38,11 @@ void EmptyLinkFunctionForGeneratedCodeNavesLAB01USFXGameMode() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AEnemigos_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_AEnemigos;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ArrayMuros_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ArrayMuros_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_ArrayMuros;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TiempoEnFormacion_MetaData[];
 #endif
@@ -73,6 +79,14 @@ void EmptyLinkFunctionForGeneratedCodeNavesLAB01USFXGameMode() {}
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_AEnemigos = { "AEnemigos", nullptr, (EPropertyFlags)0x0010000000000015, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANavesLAB01USFXGameMode, AEnemigos), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_AEnemigos_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_AEnemigos_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_ArrayMuros_Inner = { "ArrayMuros", nullptr, (EPropertyFlags)0x0000000000020000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_AMuroBase_NoRegister, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_ArrayMuros_MetaData[] = {
+		{ "Category", "Muros" },
+		{ "ModuleRelativePath", "NavesLAB01USFXGameMode.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_ArrayMuros = { "ArrayMuros", nullptr, (EPropertyFlags)0x0010000000020015, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANavesLAB01USFXGameMode, ArrayMuros), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_ArrayMuros_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_ArrayMuros_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_TiempoEnFormacion_MetaData[] = {
 		{ "Category", "Configuracion Formacion" },
@@ -101,6 +115,8 @@ void EmptyLinkFunctionForGeneratedCodeNavesLAB01USFXGameMode() {}
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_AEnemigos_Inner,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_AEnemigos,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_ArrayMuros_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_ArrayMuros,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_TiempoEnFormacion,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_IntervaloFormacion,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_EspaciadoVertical,
@@ -132,7 +148,7 @@ void EmptyLinkFunctionForGeneratedCodeNavesLAB01USFXGameMode() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANavesLAB01USFXGameMode, 1638467688);
+	IMPLEMENT_CLASS(ANavesLAB01USFXGameMode, 557120892);
 	template<> NAVESLAB01USFX_API UClass* StaticClass<ANavesLAB01USFXGameMode>()
 	{
 		return ANavesLAB01USFXGameMode::StaticClass();
